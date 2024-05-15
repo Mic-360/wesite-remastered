@@ -1,14 +1,10 @@
 import { useState } from 'react';
 
 const Services = () => {
-  const [player, setPlayer] = useState('wesite-remastered/play.svg');
-  const [arrow, setArrow] = useState('wesite-remastered/return.svg');
+  const [player, setPlayer] = useState('/play.svg');
+  const [arrow, setArrow] = useState('/return.svg');
   const handlePlayer = () => {
-    setPlayer((prev) =>
-      prev === 'wesite-remastered/play.svg'
-        ? 'wesite-remastered/pause.svg'
-        : 'wesite-remastered/play.svg'
-    );
+    setPlayer((prev) => (prev === '/play.svg' ? '/pause.svg' : '/play.svg'));
   };
   const [selectedInterest, setSelectedInterest] = useState("I'm interest in*");
 
@@ -16,7 +12,7 @@ const Services = () => {
     <>
       <div className='flex flex-col justify-center items-center'>
         <img
-          src='wesite-remastered/center_prototype.svg'
+          src='/center_prototype.svg'
           alt='main logo'
           className='h-96 w-96'
         />
@@ -24,7 +20,7 @@ const Services = () => {
           onClick={() =>
             window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })
           }
-          src='wesite-remastered/line-arrow.svg'
+          src='/line-arrow.svg'
           alt='scroll arrow'
           className='mb-20 rotate-90 animate-pulse'
         />
@@ -71,7 +67,7 @@ const Services = () => {
         </div>
         <div>
           <img
-            src='wesite-remastered/device-image.jpg'
+            src='/device-image.jpg'
             alt='mockup'
             className='h-[35rem]'
           />
@@ -84,7 +80,7 @@ const Services = () => {
       </div>
       <div className='bg-white text-black flex pr-96 py-10 gap-x-16'>
         <img
-          src='wesite-remastered/template.jpg'
+          src='/template.jpg'
           alt='banner'
         />
         <div className='pt-10 flex flex-col justify-between'>
@@ -110,7 +106,7 @@ const Services = () => {
               alt='directions'
             />
             <img
-              src='wesite-remastered/see-more.svg'
+              src='/see-more.svg'
               alt='see more'
             />
           </div>
@@ -134,25 +130,25 @@ const Services = () => {
       <div className='pb-28'>
         <div className='py-20 flex justify-evenly'>
           <img
-            src='wesite-remastered/line-mockup.svg'
+            src='/line-mockup.svg'
             alt='beyond-reality'
           />
           <img
-            src='wesite-remastered/device-image.jpg'
+            src='/device-image.jpg'
             alt='web-ar'
             className='h-80 rounded-xl mt-20'
           />
           <img
-            src='wesite-remastered/line-mockup.svg'
+            src='/line-mockup.svg'
             alt='beyond-reality'
           />
           <img
-            src='wesite-remastered/device-image.jpg'
+            src='/device-image.jpg'
             alt='web-xr'
             className='h-80 mt-20 rounded-xl'
           />
           <img
-            src='wesite-remastered/line-mockup.svg'
+            src='/line-mockup.svg'
             alt='beyond-reality'
           />
         </div>
@@ -165,7 +161,7 @@ const Services = () => {
       <div className='h-screen bg-white text-black flex justify-center items-center'>
         <div>
           <img
-            src='wesite-remastered/gitex.jpg'
+            src='/gitex.jpg'
             alt='Achievements'
             className='aspect-auto max-h-96'
           />
@@ -192,17 +188,17 @@ const Services = () => {
         </div>
         <div className='h-full pb-4 flex flex-col gap-y-8 overflow-y-scroll'>
           <img
-            src='wesite-remastered/news-a.jpg'
+            src='/news-a.jpg'
             alt='news-article'
             className='h-54'
           />
           <img
-            src='wesite-remastered/news-b.jpg'
+            src='/news-b.jpg'
             alt='news-article'
             className='h-54'
           />
           <img
-            src='wesite-remastered/news-c.jpg'
+            src='/news-c.jpg'
             alt='news-article'
             className='h-54'
           />

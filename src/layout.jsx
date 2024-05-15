@@ -2,13 +2,13 @@ import { useState } from 'react';
 import './App.css';
 
 const Layout = ({ children }) => {
-  const [arrow, setArrow] = useState('wesite-remastered/vector_arrow.svg');
+  const [arrow, setArrow] = useState('/vector_arrow.svg');
 
   return (
     <main className='fade-in'>
       <header>
         <img
-          src='wesite-remastered/title.svg'
+          src='/title.svg'
           alt='title'
           className='px-20 pt-6'
         />
