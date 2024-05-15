@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
     <main className='fade-in'>
       <header>
         <img
-          src='/title.svg'
+          src='wesite-remastered/title.svg'
           alt='title'
           className='px-20 pt-6'
         />
