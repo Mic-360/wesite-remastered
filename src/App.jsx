@@ -1,20 +1,13 @@
 import { useState, useEffect } from 'react';
 import Layout from './layout';
 import Loading from './loading';
-import './App.css';
 import Services from '../pages/Services';
+import './App.css';
 
 function App() {
   const [showLayout, setShowLayout] = useState(false);
 
   useEffect(() => {
-    const onLoad = () => {
-      const hrElement = document.querySelector('hr');
-      hrElement.classList.add('line');
-    };
-
-    onLoad();
-
     const handleScroll = () => {
       if (window.scrollY > 0) {
         setShowLayout(true);
@@ -25,12 +18,12 @@ function App() {
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      window.scrollTo(0, 0);
     };
   }, []);
 
   return (
     <>
-      <hr className='border-none fixed top-0 z-10' />
       {showLayout ? (
         <Layout>
           <Services />
