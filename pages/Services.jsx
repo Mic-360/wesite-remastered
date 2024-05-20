@@ -162,7 +162,7 @@ const Services = () => {
           </button>
         </div>
       </div>
-      <div className='h-screen bg-red-50 text-black flex justify-center items-center'>
+      <div className='h-screen bg-white text-black flex justify-center items-center'>
         <div>
           <img
             src='./gitex.jpg'
