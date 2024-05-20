@@ -1,6 +1,31 @@
+import { useEffect } from 'react';
+
 const Loading = () => {
+  useEffect(() => {
+    const hrElement = document.querySelector('hr');
+    hrElement.classList.add('line');
+
+    document.addEventListener(
+      'wheel',
+      function disableScroll(event) {
+        event.preventDefault();
+        setTimeout(() => {
+          document.removeEventListener('wheel', disableScroll, {
+            passive: false,
+          });
+        }, 1000);
+      },
+      { passive: false }
+    );
+
+    return () => {
+      hrElement.classList.remove('line');
+    };
+  }, []);
+
   return (
     <div className='flex flex-col mt-1 justify-center items-center h-screen'>
+      <hr className='border-none fixed top-0 z-10' />
       <svg
         width='40%'
         height='40%'

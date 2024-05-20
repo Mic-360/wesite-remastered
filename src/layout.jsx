@@ -1,35 +1,53 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
+import { useLocation } from 'react-router-dom';
 
 const Layout = ({ children }) => {
   const [arrow, setArrow] = useState('./vector_arrow.svg');
+  const [header, setHeader] = useState('');
+  const [selectedInterest, setSelectedInterest] = useState("I'm interest in*");
+  const [submitArrow, setSubmitArrow] = useState('./accent-return.svg');
+  const location = useLocation();
+
+  useEffect(() => {
+    const onLoad = () => {
+      const hrElement = document.querySelector('hr');
+      hrElement.classList.add('line');
+    };
+
+    if (location.pathname.includes('story')) {
+      setHeader('hidden');
+    }
+    onLoad();
+  }, [location]);
 
   return (
     <main className='fade-in'>
-      <header>
+      <hr className='border-none fixed top-0 z-50' />
+      <header className={header}>
         <img
           src='./title.svg'
           alt='title'
           className='px-20 pt-6'
         />
       </header>
-      <nav className='sticky top-1 uppercase my-4 px-6 py-3 bg-main'>
+      <nav className='sticky top-1 uppercase my-4 px-6 py-3 bg-main z-20'>
         <ul className='flex justify-around'>
           <li className='cursor-pointer font-medium hover:underline underline-offset-2 hover:text-accent'>
-            <a href='/home'>Story</a>
+            <a href='/wesite-remastered/story'>Story</a>
           </li>
           <li className='cursor-pointer font-medium hover:underline underline-offset-2 hover:text-accent'>
             <a href='/about'>AR&nbsp;Kiosk</a>
           </li>
           <li className='cursor-pointer font-medium hover:underline underline-offset-2 hover:text-accent'>
-            <a href='/contact'>Services</a>
+            <a href='/contact'>Products</a>
           </li>
           <li className='cursor-pointer font-medium hover:underline underline-offset-2 hover:text-accent'>
             <a href='/home'>Achievements</a>
           </li>
           <li
-            onMouseOver={() => setArrow('/line-arrow.svg')}
-            onMouseLeave={() => setArrow('/vector_arrow.svg')}
+            onMouseOver={() => setArrow('./line-arrow.svg')}
+            onMouseLeave={() => setArrow('./vector_arrow.svg')}
             className='flex gap-x-1 cursor-pointer font-medium hover:underline underline-offset-2 hover:text-accent'
           >
             <a href='/about'>Get&nbsp;in&nbsp;touch</a>
@@ -41,6 +59,88 @@ const Layout = ({ children }) => {
         </ul>
       </nav>
       {children}
+      <div className='flex flex-col justify-center items-start px-20 py-20'>
+        <p className='text-5xl'>Work with us!</p>
+        <form
+          action=''
+          className='py-10 w-full flex flex-col items-start gap-y-3'
+        >
+          <input
+            type='text'
+            className='bg-transparent border-2 border-plume w-3/5 h-8 px-2.5 py-5 font-normal placeholder:text-plume text-white focus:outline-none cursor-pointer cursor-accent'
+            placeholder='Name*'
+          />
+          <input
+            type='email'
+            className='bg-transparent border-2 border-plume w-3/5 h-8 px-2.5 py-5 font-normal placeholder:text-plume text-white focus:outline-none'
+            placeholder='Email*'
+          />
+          <select
+            name='interest'
+            className='focus:outline-none w-3/5 bg-transparent border-2 border-plume py-3 px-2 text-plume appearance-auto rounded-none'
+            value={selectedInterest}
+            onChange={(e) => {
+              setSelectedInterest(e.target.value);
+            }}
+          >
+            <option
+              className='text-plume bg-main'
+              value="I'm interest in*"
+            >
+              I&apos;m interest in*
+            </option>
+            <option
+              className='text-plume bg-main'
+              value='Virtual reality'
+            >
+              Kiosk Systems
+            </option>
+            <option
+              className='text-plume bg-main'
+              value='Web Augmented Reality'
+            >
+              AR Services
+            </option>
+            <option
+              className='text-plume bg-main'
+              value='Commercial Kiosk'
+            >
+              Full Kiosk
+            </option>
+            <option
+              className='text-plume bg-main'
+              value='Advertizing'
+            >
+              Architecture
+            </option>
+          </select>
+          <input
+            type='text'
+            className='bg-transparent border-2 border-plume w-3/5 h-8 px-2.5 py-5 font-normal placeholder:text-plume text-white focus:outline-none'
+            placeholder='Company'
+          />
+          <textarea
+            className='bg-transparent border-2 border-plume w-3/5 h-24 px-2.5 pt-2 font-normal placeholder:text-plume text-white focus:outline-none'
+            placeholder='Tell us more why you want to get in touch'
+          />
+          <div className='flex pt-4 w-3/5 justify-end'>
+            <div
+              onMouseEnter={() => setSubmitArrow('./line-arrow.svg')}
+              onMouseLeave={() => setSubmitArrow('./accent-return.svg')}
+              className='flex gap-x-4 items-center justify-center border-2 border-accent text-accent hover:text-main hover:bg-accent hover:font-medium px-6 py-2'
+            >
+              <input
+                type='submit'
+                placeholder='Submit'
+              />
+              <img
+                src={submitArrow}
+                alt='arrow'
+              />
+            </div>
+          </div>
+        </form>
+      </div>
       <footer className='px-20 py-2 flex flex-col justify-center items-center'>
         <div className='flex justify-between w-full items-baseline'>
           <h1 className='text-5xl'>Connect with us!</h1>

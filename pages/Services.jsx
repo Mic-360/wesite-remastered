@@ -3,14 +3,15 @@ import { useState } from 'react';
 const Services = () => {
   const [player, setPlayer] = useState('./play.svg');
   const [arrow, setArrow] = useState('./return.svg');
+
   const handlePlayer = () => {
     setPlayer((prev) => (prev === './play.svg' ? './pause.svg' : './play.svg'));
   };
-  const [selectedInterest, setSelectedInterest] = useState("I'm interest in*");
+
 
   return (
     <>
-      <div className='flex flex-col justify-center items-center'>
+      <div className='flex flex-col justify-center items-center h-full py-10'>
         <img
           src='./center_prototype.svg'
           alt='main logo'
@@ -74,11 +75,11 @@ const Services = () => {
         </div>
       </div>
       <div className='bg-white pb-8 -mt-12 flex w-full justify-center items-center'>
-        <button className='bg-plume font-light mono px-6 py-4 text-black text-sm'>
+        <button className='bg-plume hover:bg-accent border-2 border-plume font-light mono px-6 py-4 text-black text-sm'>
           Tap to Play
         </button>
       </div>
-      <div className='bg-white text-black flex pr-96 py-10 gap-x-16'>
+      <div className='bg-white text-black flex pr-96 py-20 gap-x-16'>
         <img
           src='./template.jpg'
           alt='banner'
@@ -97,8 +98,8 @@ const Services = () => {
             </ul>
           </div>
           <div
-            onMouseOver={() => setArrow('/long-line.svg')}
-            onMouseLeave={() => setArrow('/return.svg')}
+            onMouseOver={() => setArrow('./long-line.svg')}
+            onMouseLeave={() => setArrow('./return.svg')}
             className='flex gap-2 items-center w-fit justify-start cursor-pointer'
           >
             <img
@@ -132,6 +133,7 @@ const Services = () => {
           <img
             src='./line-mockup.svg'
             alt='beyond-reality'
+            className='w-72'
           />
           <img
             src='./device-image.jpg'
@@ -141,6 +143,7 @@ const Services = () => {
           <img
             src='./line-mockup.svg'
             alt='beyond-reality'
+            className='w-72'
           />
           <img
             src='./device-image.jpg'
@@ -150,15 +153,16 @@ const Services = () => {
           <img
             src='./line-mockup.svg'
             alt='beyond-reality'
+            className='w-72'
           />
         </div>
         <div className='flex justify-center items-center w-full'>
-          <button className='bg-plume font-light mono px-6 py-4 text-black text-sm'>
+          <button className='bg-plume hover:bg-accent font-light mono px-6 py-4 text-black text-sm'>
             Book a Demo
           </button>
         </div>
       </div>
-      <div className='h-screen bg-white text-black flex justify-center items-center'>
+      <div className='h-screen bg-red-50 text-black flex justify-center items-center'>
         <div>
           <img
             src='./gitex.jpg'
@@ -174,12 +178,19 @@ const Services = () => {
             </div>
           </div>
         </div>
+        <div className='absolute backdrop-blur-lg -left-80 mt-44'>
+          <img
+            src='./gitex.jpg'
+            alt='Achievements'
+            className='aspect-auto max-h-72 blur-sm rounded-lg'
+          />
+        </div>
       </div>
       <div className='px-20 flex justify-between h-screen bg-white text-black'>
         <div className='h-full text-left'>
           <p className='uppercase text-md text-plume mono'>Latest News</p>
           <div className='text-5xl py-4 '>
-            <p className='leading-snug'>
+            <p className='leading-snug font-medium'>
               Learn how 3-D AR
               <br /> technology is moving
               <br /> the world forward.
@@ -203,96 +214,6 @@ const Services = () => {
             className='h-54'
           />
         </div>
-      </div>
-      <div className='flex flex-col justify-center items-start px-20 py-20'>
-        <p className='text-5xl'>Work with us!</p>
-        <form
-          action=''
-          className='py-10 w-full flex flex-col items-start gap-y-3'
-        >
-          <input
-            type='text'
-            className='bg-transparent border-2 border-plume w-3/5 h-8 px-2.5 py-5 font-normal placeholder:text-plume text-white focus:outline-none'
-            placeholder='Name*'
-          />
-          <input
-            type='email'
-            className='bg-transparent border-2 border-plume w-3/5 h-8 px-2.5 py-5 font-normal placeholder:text-plume text-white focus:outline-none'
-            placeholder='Email*'
-          />
-          <select
-            name='interest'
-            className='focus:outline-none w-3/5 bg-transparent border-2 border-plume py-3 px-2 text-plume'
-            value={selectedInterest}
-            onChange={(e) => {
-              setSelectedInterest(e.target.value);
-            }}
-          >
-            <option
-              className='text-plume bg-main'
-              value="I'm interest in*"
-            >
-              I&apos;m interest in*
-            </option>
-            <option
-              className='text-plume bg-main'
-              value='Virtual reality'
-            >
-              Virtual reality
-            </option>
-            <option
-              className='text-plume bg-main'
-              value='Web Augmented Reality'
-            >
-              Web Augmented Reality
-            </option>
-            <option
-              className='text-plume bg-main'
-              value='Commercial Kiosk'
-            >
-              Commercial Kiosk
-            </option>
-            <option
-              className='text-plume bg-main'
-              value='Advertizing'
-            >
-              Advertizing
-            </option>
-          </select>
-          <input
-            type='text'
-            className='bg-transparent border-2 border-plume w-3/5 h-8 px-2.5 py-5 font-normal placeholder:text-plume text-white focus:outline-none'
-            placeholder='Company'
-          />
-          <textarea
-            className='bg-transparent border-2 border-plume w-3/5 h-24 px-2.5 pt-2 font-normal placeholder:text-plume text-white focus:outline-none'
-            placeholder='Tell us more why you want to get in touch'
-          />
-          <div className='flex pt-4 w-3/5 justify-end'>
-            <div className='flex gap-x-4 items-center justify-center border-2 border-accent text-accent px-6 py-2'>
-              <input
-                type='submit'
-                className=''
-                placeholder='Submit'
-              />
-              <svg
-                width='16'
-                height='12'
-                viewBox='0 0 18 14'
-                fill='none'
-                xmlns='http://www.w3.org/2000/svg'
-              >
-                <path
-                  d='M17 8.34974C17 8.34974 6.13407 8.3497 1 8.3497V1.5M17 8.34974L11.7865 3.54622M17 8.34974L11.7865 13'
-                  stroke='#E0FF63'
-                  strokeWidth='1.2'
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                />
-              </svg>
-            </div>
-          </div>
-        </form>
       </div>
     </>
   );
