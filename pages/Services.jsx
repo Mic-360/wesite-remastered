@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Scene from '../components/scene';
 
 const Services = () => {
   const [player, setPlayer] = useState('./play.svg');
@@ -8,15 +9,12 @@ const Services = () => {
     setPlayer((prev) => (prev === './play.svg' ? './pause.svg' : './play.svg'));
   };
 
-
   return (
     <>
+      <div className='h-96 w-full'>
+        <Scene />
+      </div>
       <div className='flex flex-col justify-center items-center h-full py-10'>
-        <img
-          src='./center_prototype.svg'
-          alt='main logo'
-          className='h-96 w-96'
-        />
         <img
           onClick={() =>
             window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })
@@ -133,27 +131,27 @@ const Services = () => {
           <img
             src='./line-mockup.svg'
             alt='beyond-reality'
-            className='w-72'
+            className='w-64'
           />
           <img
             src='./device-image.jpg'
             alt='web-ar'
-            className='h-80 rounded-xl mt-20'
+            className='h-72 rounded-xl mt-20'
           />
           <img
             src='./line-mockup.svg'
             alt='beyond-reality'
-            className='w-72'
+            className='w-64'
           />
           <img
             src='./device-image.jpg'
             alt='web-xr'
-            className='h-80 mt-20 rounded-xl'
+            className='h-72 mt-20 rounded-xl'
           />
           <img
             src='./line-mockup.svg'
             alt='beyond-reality'
-            className='w-72'
+            className='w-64'
           />
         </div>
         <div className='flex justify-center items-center w-full'>
@@ -197,7 +195,7 @@ const Services = () => {
             </p>
           </div>
         </div>
-        <div className='h-full pb-4 flex flex-col gap-y-8 overflow-y-scroll'>
+        <div className='h-full pb-4 flex flex-col gap-y-8 overflow-y-scroll news-article'>
           <img
             src='./news-a.jpg'
             alt='news-article'
