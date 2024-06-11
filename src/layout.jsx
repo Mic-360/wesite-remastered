@@ -3,11 +3,11 @@ import './App.css';
 import { useLocation } from 'react-router-dom';
 
 const Layout = ({ children }) => {
-  const [arrow, setArrow] = useState('./vector_arrow.svg');
   const [header, setHeader] = useState('');
   const [selectedInterest, setSelectedInterest] = useState("I'm interest in*");
   const [submitArrow, setSubmitArrow] = useState('./accent-return.svg');
   const location = useLocation();
+  const [hover, setHover] = useState(false);
 
   useEffect(() => {
     const onLoad = () => {
@@ -32,7 +32,7 @@ const Layout = ({ children }) => {
         />
       </header>
       <nav className='sticky top-1 uppercase my-4 px-6 py-3 bg-main z-20'>
-        <ul className='flex justify-around'>
+        <ul className='flex justify-around transition-all ease-in duration-300'>
           <li className='cursor-pointer font-medium hover:underline underline-offset-2 hover:text-accent'>
             <a href='/wesite-remastered/story'>Story</a>
           </li>
@@ -45,16 +45,22 @@ const Layout = ({ children }) => {
           <li className='cursor-pointer font-medium hover:underline underline-offset-2 hover:text-accent'>
             <a href='/home'>Achievements</a>
           </li>
-          <li
-            onMouseOver={() => setArrow('./line-arrow.svg')}
-            onMouseLeave={() => setArrow('./vector_arrow.svg')}
-            className='flex gap-x-1 cursor-pointer font-medium hover:underline underline-offset-2 hover:text-accent'
-          >
-            <a href='/about'>Get&nbsp;in&nbsp;touch</a>
-            <img
-              src={arrow}
-              alt='arrow'
-            />
+          <li className='flex gap-x-1 cursor-pointer font-medium hover:underline underline-offset-2 hover:text-accent'>
+            <a
+              href='/about'
+              className='flex gap-x-1'
+              onMouseOver={() => setHover(true)}
+              onMouseLeave={() => setHover(false)}
+            >
+              Get&nbsp;in&nbsp;touch
+              <img
+                src='./vector_arrow.svg'
+                alt='arrow'
+                className={`${
+                  hover ? 'rotate-45' : ''
+                } transition-all ease-in-out duration-300`}
+              />
+            </a>
           </li>
         </ul>
       </nav>
@@ -127,7 +133,7 @@ const Layout = ({ children }) => {
             <div
               onMouseEnter={() => setSubmitArrow('./line-arrow.svg')}
               onMouseLeave={() => setSubmitArrow('./accent-return.svg')}
-              className='flex gap-x-4 items-center justify-center border-2 border-accent text-accent hover:text-main hover:bg-accent hover:font-medium px-6 py-2'
+              className='flex gap-x-4 items-center justify-center border-2 border-accent text-accent hover:text-main hover:bg-accent hover:font-medium px-6 py-2 transition-all ease-in duration-300'
             >
               <input
                 type='submit'

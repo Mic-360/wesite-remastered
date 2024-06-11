@@ -1,15 +1,15 @@
+/* eslint-disable react/no-unknown-property */
 import { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import {
   useGLTF,
   MeshTransmissionMaterial,
   ContactShadows,
-  Environment,
 } from '@react-three/drei';
 import { easing } from 'maath';
 import { useStore } from '../lib/utils';
 
-export default function App() {
+export default function LogoCreate() {
   return (
     <Canvas
       eventSource={document.getElementById('root')}
@@ -58,7 +58,7 @@ function Selector({ children }) {
     );
     easing.dampC(
       ref.current.material.color,
-      store.open ? '#f0f0f0' : '#ccc',
+      store.open ? '#121212' : '#ccc',
       0.1,
       delta
     );

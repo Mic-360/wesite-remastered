@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Scene from '../components/scene';
+import LogoCreate from '../components/scene';
 
 const Services = () => {
   const [player, setPlayer] = useState('./play.svg');
@@ -12,7 +12,7 @@ const Services = () => {
   return (
     <>
       <div className='h-96 w-full'>
-        <Scene />
+        <LogoCreate />
       </div>
       <div className='flex flex-col justify-center items-center h-full py-10'>
         <img
@@ -61,6 +61,7 @@ const Services = () => {
             onClick={handlePlayer}
             src={player}
             alt='player control'
+            className='cursor-pointer transition-opacity ease-in-out duration-300 hover:opacity-70'
           />
           <p className='text-sm'>Click and Play</p>
         </div>
@@ -73,7 +74,7 @@ const Services = () => {
         </div>
       </div>
       <div className='bg-white pb-8 -mt-12 flex w-full justify-center items-center'>
-        <button className='bg-plume hover:bg-accent border-2 border-plume font-light mono px-6 py-4 text-black text-sm'>
+        <button className='bg-plume hover:bg-accent border-2 border-plume font-light mono px-6 py-4 text-black text-sm transition-all ease-in duration-300'>
           Tap to Play
         </button>
       </div>
@@ -98,11 +99,12 @@ const Services = () => {
           <div
             onMouseOver={() => setArrow('./long-line.svg')}
             onMouseLeave={() => setArrow('./return.svg')}
-            className='flex gap-2 items-center w-fit justify-start cursor-pointer'
+            className='flex gap-2 items-center w-fit justify-start cursor-pointer transition-transform ease-linear duration-300'
           >
             <img
               src={arrow}
               alt='directions'
+              className='transform hover:scale-60'
             />
             <img
               src='./see-more.svg'
@@ -155,7 +157,7 @@ const Services = () => {
           />
         </div>
         <div className='flex justify-center items-center w-full'>
-          <button className='bg-plume hover:bg-accent font-light mono px-6 py-4 text-black text-sm'>
+          <button className='bg-plume hover:bg-accent font-light mono px-6 py-4 text-black text-sm transition-all ease-in duration-300'>
             Book a Demo
           </button>
         </div>
