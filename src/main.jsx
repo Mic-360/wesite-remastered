@@ -15,10 +15,10 @@ const router = createBrowserRouter([
     path: '/wesite-remastered/story',
     element: <Story />,
   },
-  // {
-  //   path: '/wesite-remastered/ar-kiosk',
-  //   element: <Kiosk />,
-  // },
+  {
+    path: '/wesite-remastered/ar-kiosk',
+    element: <Kiosk />,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

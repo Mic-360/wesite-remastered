@@ -1,9 +1,7 @@
-/* eslint-disable react/no-unknown-property */
-import { ContactShadows, useGLTF } from '@react-three/drei';
-import { Canvas, useFrame } from '@react-three/fiber';
+import { useGLTF } from '@react-three/drei';
+import { useFrame } from '@react-three/fiber';
 import { useRef } from 'react';
 import { LineBasicMaterial } from 'three';
-import { OrbitControls } from '@react-three/drei';
 
 export function Logo(props) {
   const ref = useRef();
