@@ -37,7 +37,7 @@ const Layout = ({ children }) => {
             <a href='/wesite-remastered/story'>Story</a>
           </li>
           <li className='cursor-pointer font-medium hover:underline underline-offset-2 hover:text-accent'>
-            <a href='/about'>AR&nbsp;Kiosk</a>
+            <a href='/wesite-remastered/ar-kiosk'>AR&nbsp;Kiosk</a>
           </li>
           <li className='cursor-pointer font-medium hover:underline underline-offset-2 hover:text-accent'>
             <a href='/contact'>Products</a>
@@ -47,7 +47,7 @@ const Layout = ({ children }) => {
           </li>
           <li className='flex gap-x-1 cursor-pointer font-medium hover:underline underline-offset-2 hover:text-accent'>
             <a
-              href='/about'
+              href='#connect'
               className='flex gap-x-1'
               onMouseOver={() => setHover(true)}
               onMouseLeave={() => setHover(false)}
@@ -65,7 +65,10 @@ const Layout = ({ children }) => {
         </ul>
       </nav>
       {children}
-      <div className='flex flex-col justify-center items-start px-20 py-20'>
+      <div
+        id='connect'
+        className='flex flex-col justify-center items-start px-20 py-20'
+      >
         <p className='text-5xl'>Work with us!</p>
         <form
           action=''
