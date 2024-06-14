@@ -13,7 +13,7 @@ const Loading = () => {
           document.removeEventListener('wheel', disableScroll, {
             passive: false,
           });
-        }, 1000);
+        }, 500);
       },
       { passive: false }
     );

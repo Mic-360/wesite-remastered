@@ -1,19 +1,35 @@
-import { useState } from 'react';
-import LogoCreate from '../components/scene';
+import { Suspense, useRef, useState } from 'react';
+import Loading from '../src/loading';
+import Scene, { Selector } from '../components/Scene';
+import { Logo } from '../components/sceneAssets';
 
 const Services = () => {
   const [player, setPlayer] = useState('./play.svg');
   const [arrow, setArrow] = useState('./return.svg');
+  const playerRef = useRef();
 
   const handlePlayer = () => {
     setPlayer((prev) => (prev === './play.svg' ? './pause.svg' : './play.svg'));
+
+    // toggle play/pause
+    if (playerRef.current.paused) {
+      playerRef.current.play();
+    } else {
+      playerRef.current.pause();
+    }
   };
 
   return (
     <>
-      <div className='h-96 w-full'>
-        <LogoCreate />
-      </div>
+      <Suspense fallback={<Loading />}>
+        <div className='h-96 w-full'>
+          <Scene>
+            <Selector>
+              <Logo rotation={[0.3, Math.PI / 1.6, 0]} />
+            </Selector>
+          </Scene>
+        </div>
+      </Suspense>
       <div className='flex flex-col justify-center items-center h-full py-10'>
         <img
           onClick={() =>
@@ -65,12 +81,18 @@ const Services = () => {
           />
           <p className='text-sm'>Click and Play</p>
         </div>
-        <div>
-          <img
-            src='./device-image.jpg'
-            alt='mockup'
-            className='h-[35rem]'
-          />
+        <div className='w-80 rounded-xl overflow-hidden'>
+          <video
+            ref={playerRef}
+            onClick={handlePlayer}
+            autoFocus
+            preload='auto'
+          >
+            <source
+              src='./titleVideo.mp4'
+              type='video/mp4'
+            />
+          </video>
         </div>
       </div>
       <div className='bg-white pb-8 -mt-12 flex w-full justify-center items-center'>
