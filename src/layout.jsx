@@ -5,7 +5,7 @@ import { useLocation } from 'react-router-dom';
 const Layout = ({ children }) => {
   const [header, setHeader] = useState('');
   const [selectedInterest, setSelectedInterest] = useState("I'm interest in*");
-  const [submitArrow, setSubmitArrow] = useState('./accent-return.svg');
+  const [submitArrow, setSubmitArrow] = useState('./svgs/accent-return.svg');
   const location = useLocation();
   const [hover, setHover] = useState(false);
 
@@ -26,7 +26,7 @@ const Layout = ({ children }) => {
       <hr className='border-none fixed top-0 z-50' />
       <header className={header}>
         <img
-          src='./title.svg'
+          src='./svgs/title.svg'
           alt='title'
           className='px-20 pt-6'
         />
@@ -54,7 +54,7 @@ const Layout = ({ children }) => {
             >
               Get&nbsp;in&nbsp;touch
               <img
-                src='./vector_arrow.svg'
+                src='./svgs/vector_arrow.svg'
                 alt='arrow'
                 className={`${
                   hover ? 'rotate-45' : ''
@@ -134,8 +134,8 @@ const Layout = ({ children }) => {
           />
           <div className='flex pt-4 w-3/5 justify-end'>
             <div
-              onMouseEnter={() => setSubmitArrow('./line-arrow.svg')}
-              onMouseLeave={() => setSubmitArrow('./accent-return.svg')}
+              onMouseEnter={() => setSubmitArrow('./svgs/line-arrow.svg')}
+              onMouseLeave={() => setSubmitArrow('./svgs/accent-return.svg')}
               className='flex gap-x-4 items-center justify-center border-2 border-accent text-accent hover:text-main hover:bg-accent hover:font-medium px-6 py-2 transition-all ease-in duration-300'
             >
               <input

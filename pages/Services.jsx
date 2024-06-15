@@ -1,16 +1,17 @@
 import { Suspense, useRef, useState } from 'react';
 import Loading from '../src/loading';
-import Scene, { Selector } from '../components/Scene';
-import { Logo } from '../components/sceneAssets';
+import Scene, { Selector } from '../src/scene';
+import { Designs, Logo } from '../components/sceneAssets';
 
 const Services = () => {
-  const [player, setPlayer] = useState('./play.svg');
-  const [arrow, setArrow] = useState('./return.svg');
+  const [player, setPlayer] = useState('./svgs/play.svg');
+  const [arrow, setArrow] = useState('./svgs/return.svg');
   const playerRef = useRef();
 
   const handlePlayer = () => {
-    setPlayer((prev) => (prev === './play.svg' ? './pause.svg' : './play.svg'));
-
+    setPlayer((prev) =>
+      prev === './svgs/play.svg' ? './svgs/pause.svg' : './svgs/play.svg'
+    );
     // toggle play/pause
     if (playerRef.current.paused) {
       playerRef.current.play();
@@ -35,7 +36,7 @@ const Services = () => {
           onClick={() =>
             window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })
           }
-          src='./line-arrow.svg'
+          src='./svgs/line-arrow.svg'
           alt='scroll arrow'
           className='mb-20 rotate-90 animate-pulse'
         />
@@ -89,7 +90,7 @@ const Services = () => {
             preload='auto'
           >
             <source
-              src='./titleVideo.mp4'
+              src='./videos/titleVideo.mp4'
               type='video/mp4'
             />
           </video>
@@ -102,7 +103,7 @@ const Services = () => {
       </div>
       <div className='bg-white text-black flex pr-96 py-20 gap-x-16'>
         <img
-          src='./template.jpg'
+          src='./images/template.jpg'
           alt='banner'
         />
         <div className='pt-10 flex flex-col justify-between'>
@@ -119,8 +120,8 @@ const Services = () => {
             </ul>
           </div>
           <div
-            onMouseOver={() => setArrow('./long-line.svg')}
-            onMouseLeave={() => setArrow('./return.svg')}
+            onMouseOver={() => setArrow('./svgs/long-line.svg')}
+            onMouseLeave={() => setArrow('./svgs/return.svg')}
             className='flex gap-2 items-center w-fit justify-start cursor-pointer transition-transform ease-linear duration-300'
           >
             <img
@@ -129,7 +130,7 @@ const Services = () => {
               className='transform hover:scale-60'
             />
             <img
-              src='./see-more.svg'
+              src='./svgs/see-more.svg'
               alt='see more'
             />
           </div>
@@ -187,7 +188,7 @@ const Services = () => {
       <div className='h-screen bg-white text-black flex justify-center items-center'>
         <div>
           <img
-            src='./gitex.jpg'
+            src='./images/gitex.jpg'
             alt='Achievements'
             className='aspect-auto max-h-96'
           />
@@ -202,7 +203,7 @@ const Services = () => {
         </div>
         <div className='absolute backdrop-blur-lg -left-80 mt-44'>
           <img
-            src='./gitex.jpg'
+            src='./images/gitex.jpg'
             alt='Achievements'
             className='aspect-auto max-h-72 blur-sm rounded-lg'
           />
@@ -221,17 +222,17 @@ const Services = () => {
         </div>
         <div className='h-full pb-4 flex flex-col gap-y-8 overflow-y-scroll news-article'>
           <img
-            src='./news-a.jpg'
+            src='./images/news-a.jpg'
             alt='news-article'
             className='h-54'
           />
           <img
-            src='./news-b.jpg'
+            src='./images/news-b.jpg'
             alt='news-article'
             className='h-54'
           />
           <img
-            src='./news-c.jpg'
+            src='./images/news-c.jpg'
             alt='news-article'
             className='h-54'
           />
