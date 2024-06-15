@@ -152,33 +152,55 @@ const Services = () => {
         </div>
       </div>
       <div className='pb-28'>
-        <div className='py-20 flex justify-evenly'>
-          <img
-            src='./line-mockup.svg'
-            alt='beyond-reality'
-            className='w-64'
-          />
-          <img
-            src='./device-image.jpg'
-            alt='web-ar'
-            className='h-72 rounded-xl mt-20'
-          />
-          <img
-            src='./line-mockup.svg'
-            alt='beyond-reality'
-            className='w-64'
-          />
-          <img
-            src='./device-image.jpg'
-            alt='web-xr'
-            className='h-72 mt-20 rounded-xl'
-          />
-          <img
-            src='./line-mockup.svg'
-            alt='beyond-reality'
-            className='w-64'
-          />
-        </div>
+        <Suspense fallback={<Loading />}>
+          <div className='py-20 flex justify-around'>
+            <div className='border border-plume h-96 w-60 rounded-2xl'>
+              <Scene>
+                <Designs
+                  model='./3Ddesign/lopez.glb'
+                  scale={[3.6, 4, 4]}
+                  position={[0, -3.1, 0]}
+                  animation='Caminata_Duvan'
+                  play
+                />
+              </Scene>
+            </div>
+            <div className='p-1 border border-plume h-96 w-60 rounded-2xl mt-20'>
+              <Scene>
+                <Designs
+                  model='./3Ddesign/clothes.glb'
+                  scale={[6, 6, 5.5]}
+                  position={[0, -5.5, 0]}
+                  animation='Armature|Take 001|BaseLayer'
+                  play
+                />
+              </Scene>
+            </div>
+            <div className='p-1 border border-plume h-96 w-60 rounded-2xl'>
+              <Scene>
+                <Designs
+                  model='./3Ddesign/dress.glb'
+                  scale={[6, 6, 6]}
+                  position={[0, -5.7, 0]}
+                  animation='Walk Cycle'
+                  play
+                />
+              </Scene>
+            </div>
+            <div className='p-1 border border-plume h-96 w-60 rounded-2xl mt-20'>
+              <Scene>
+                <Designs
+                  model='./3Ddesign/shoe.glb'
+                  scale={[9, 9, 9]}
+                  position={[0, 0, 0]}
+                  rotation={[Math.PI / 7, Math.PI / 5, Math.PI / 15]}
+                  animation='Anim'
+                  play
+                />
+              </Scene>
+            </div>
+          </div>
+        </Suspense>
         <div className='flex justify-center items-center w-full'>
           <button className='bg-plume hover:bg-accent font-light mono px-6 py-4 text-black text-sm transition-all ease-in duration-300'>
             Book a Demo

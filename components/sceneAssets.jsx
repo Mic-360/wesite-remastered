@@ -1,11 +1,15 @@
-import { useGLTF } from '@react-three/drei';
-import { useFrame } from '@react-three/fiber';
-import { useRef } from 'react';
-import { LineBasicMaterial } from 'three';
+import { useAnimations, useGLTF } from '@react-three/drei';
+import { extend, useFrame } from '@react-three/fiber';
+import { useEffect, useRef } from 'react';
+import { AnimationMixer, LineBasicMaterial } from 'three';
+import Scene from '../src/scene';
+import { SkeletonUtils } from 'three/examples/jsm/Addons.js';
+
+extend({ SkeletonUtils });
 
 export function Logo(props) {
   const ref = useRef();
-  const { scene } = useGLTF('./logo.glb');
+  const { scene } = useGLTF('./3Ddesign/logo.glb');
 
   useFrame((state) => {
     const t = state.clock.getElapsedTime();
@@ -19,18 +23,18 @@ export function Logo(props) {
     <group ref={ref}>
       <primitive
         object={scene}
-        scale={[0.1, 0.1, 0.1]}
+        scale={[0.22, 0.2, 0.2]}
         {...props}
       />
     </group>
   );
 }
 
-useGLTF.preload('./logo.glb');
+useGLTF.preload('./3Ddesign/logo.glb');
 
 export function Kiosk() {
   const ref = useRef();
-  const { nodes } = useGLTF('./wireframe.glb');
+  const { nodes } = useGLTF('./3Ddesign/wireframe.glb');
 
   console.log(nodes);
   const wireframeMaterial = new LineBasicMaterial({ color: 'black' });
@@ -42,17 +46,40 @@ export function Kiosk() {
         scale={[0.6, 1, 0.4]}
         geometry={nodes.Circle001.geometry}
         material={wireframeMaterial}
-      >
-      </mesh>
+      ></mesh>
       <mesh
         rotation={[Math.PI / 2, 0, 0]}
         scale={[12, 12, 12]}
         geometry={nodes.Curve287.geometry}
         material={nodes.Curve287.material}
-      >
-      </mesh>
+      ></mesh>
     </group>
   );
 }
 
-useGLTF.preload('./wireframe.glb');
+useGLTF.preload('./3Ddesign/wireframe.glb');
+
+export function Designs(props) {
+  const ref = useRef();
+  const { scene, animations } = useGLTF(props.model);
+  const clonedScene = SkeletonUtils.clone(scene);
+  const { actions } = useAnimations(animations, ref);
+
+  console.log(actions);
+
+  useEffect(() => {
+    if (actions[props.animation] && props.play) {
+      actions[props.animation].play();
+    }
+  }, [actions, props.animation, props.play]);
+
+  return (
+    <group>
+      <primitive
+        ref={ref}
+        object={clonedScene}
+        {...props}
+      />
+    </group>
+  );
+}
