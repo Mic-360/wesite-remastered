@@ -8,11 +8,12 @@ import { easing } from 'maath';
 import { useStore } from '../lib/utils';
 
 export default function Scene({ children }) {
+  
   return (
     <Canvas
       eventSource={document.getElementById('root')}
       eventPrefix='client'
-      camera={{ position: [0, 0, 4], fov: 40 }}
+      camera={{ position: [0, 0, 4], fov: 95 }}
     >
       <ambientLight intensity={1} />
       <ambientLight intensity={1} />
