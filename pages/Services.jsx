@@ -202,11 +202,11 @@ const Services = () => {
             <div className='p-1 border border-plume h-96 w-44 rounded-2xl'>
               <Scene>
                 <Designs
-                  model='./3Ddesign/shoe.glb'
-                  scale={[9, 9, 9]}
-                  position={[0, 0, 0]}
-                  rotation={[Math.PI / 7, Math.PI / 5, Math.PI / 15]}
-                  animation='Anim'
+                  model='./3Ddesign/hoodie.glb'
+                  scale={[0.3, 0.4, 0.4]}
+                  position={[0, -2, 0]}
+                  rotation={[0, Math.PI / 6, 0]}
+                  animation='HoodTestAnimation'
                   play
                 />
               </Scene>
