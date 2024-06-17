@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import Layout from './layout';
 import Loading from './loading';
 import Services from '../pages/Services';
@@ -23,7 +23,7 @@ function App() {
   }, []);
 
   return (
-    <>
+    <Suspense fallback={<Loading />}>
       {showLayout ? (
         <Layout>
           <Services />
@@ -31,7 +31,7 @@ function App() {
       ) : (
         <Loading />
       )}
-    </>
+    </Suspense>
   );
 }
 
