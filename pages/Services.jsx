@@ -153,8 +153,8 @@ const Services = () => {
       </div>
       <div className='pb-28'>
         <Suspense fallback={<Loading />}>
-          <div className='py-20 flex justify-around'>
-            <div className='border border-plume h-96 w-60 rounded-2xl'>
+          <div className='py-20 px-8 grid grid-cols-5 gap-2'>
+            <div className='border border-plume h-96 w-44 rounded-2xl'>
               <Scene>
                 <Designs
                   model='./3Ddesign/lopez.glb'
@@ -165,7 +165,7 @@ const Services = () => {
                 />
               </Scene>
             </div>
-            <div className='p-1 border border-plume h-96 w-60 rounded-2xl mt-20'>
+            <div className='p-1 border border-plume h-96 w-44 rounded-2xl mt-20'>
               <Scene>
                 <Designs
                   model='./3Ddesign/clothes.glb'
@@ -176,7 +176,7 @@ const Services = () => {
                 />
               </Scene>
             </div>
-            <div className='p-1 border border-plume h-96 w-60 rounded-2xl'>
+            <div className='p-1 border border-plume h-96 w-44 rounded-2xl'>
               <Scene>
                 <Designs
                   model='./3Ddesign/dress.glb'
@@ -187,7 +187,19 @@ const Services = () => {
                 />
               </Scene>
             </div>
-            <div className='p-1 border border-plume h-96 w-60 rounded-2xl mt-20'>
+            <div className='p-1 border border-plume h-96 w-44 rounded-2xl mt-20'>
+              <Scene>
+                <Designs
+                  model='./3Ddesign/shoe.glb'
+                  scale={[9, 9, 9]}
+                  position={[0, 0, 0]}
+                  rotation={[Math.PI / 7, Math.PI / 5, Math.PI / 15]}
+                  animation='Anim'
+                  play
+                />
+              </Scene>
+            </div>
+            <div className='p-1 border border-plume h-96 w-44 rounded-2xl'>
               <Scene>
                 <Designs
                   model='./3Ddesign/shoe.glb'
