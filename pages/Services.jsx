@@ -41,7 +41,7 @@ const Services = () => {
           className='mb-20 rotate-90 animate-pulse'
         />
       </div>
-      <div className='bg-white text-black flex justify-around items-center p-10 py-20'>
+      <div className='bg-white text-black flex justify-around items-center p-10 py-20 plume-cursor'>
         <div className='flex flex-col justify-between gap-y-44'>
           <div className='flex text-3xl items-baseline gap-1'>
             <svg
@@ -57,7 +57,7 @@ const Services = () => {
               />
             </svg>
             <p className='text-left text-4xl'>
-              We&apos;re shaping a new
+              <span className='bg-accent px-1'> We&apos;re shaping a new</span>
               <br /> dimension with our
               <br /> cutting-edge 3-D AR
               <br /> Kiosk Technologies
@@ -78,7 +78,7 @@ const Services = () => {
             onClick={handlePlayer}
             src={player}
             alt='player control'
-            className='cursor-pointer transition-opacity ease-in-out duration-300 hover:opacity-70'
+            className='transition-opacity ease-in-out duration-300 hover:opacity-70'
           />
           <p className='text-sm'>Click and Play</p>
         </div>
@@ -96,12 +96,12 @@ const Services = () => {
           </video>
         </div>
       </div>
-      <div className='bg-white pb-8 -mt-12 flex w-full justify-center items-center'>
-        <button className='bg-plume hover:bg-accent border-2 border-plume font-light mono px-6 py-4 text-black text-sm transition-all ease-in duration-300'>
+      <div className='bg-white pb-8 -mt-12 flex w-full justify-center items-center plume-cursor'>
+        <button className='bg-plume hover:bg-accent font-light mono px-6 py-4 text-black text-sm transition-all ease-in duration-300 cursor-none'>
           Tap to Play
         </button>
       </div>
-      <div className='bg-white text-black flex pr-96 py-20 gap-x-16'>
+      <div className='bg-white text-black flex pr-96 py-20 gap-x-16 plume-cursor'>
         <img
           src='./images/template.jpg'
           alt='banner'
@@ -112,7 +112,7 @@ const Services = () => {
               Our 3-D AR
               <br /> Try On Kiosk Collection
             </p>
-            <ul className='list-disc list-inside underline underline-offset-[5px] cursor-pointer space-y-1 text-xl mono'>
+            <ul className='list-disc list-inside underline underline-offset-[5px] space-y-1 text-xl mono hover:accent-cursor'>
               <li className='hover:text-plume'>Museum Kiosk</li>
               <li className='hover:text-plume'>Sopping Mall</li>
               <li className='hover:text-plume'>E-Commerce</li>
@@ -122,7 +122,7 @@ const Services = () => {
           <div
             onMouseOver={() => setArrow('./svgs/long-line.svg')}
             onMouseLeave={() => setArrow('./svgs/return.svg')}
-            className='flex gap-2 items-center w-fit justify-start cursor-pointer transition-transform ease-linear duration-300'
+            className='flex gap-2 items-center w-fit justify-start transition-transform ease-linear duration-300'
           >
             <img
               src={arrow}
@@ -136,7 +136,7 @@ const Services = () => {
           </div>
         </div>
       </div>
-      <div className='pt-36 text-left px-20'>
+      <div className='pt-36 text-left px-20 accent-cursor'>
         <p className='uppercase text-xs text-accent mono'>What we do</p>
         <div className='text-5xl py-10 '>
           <p className='leading-snug'>
@@ -151,7 +151,7 @@ const Services = () => {
           </p>
         </div>
       </div>
-      <div className='pb-28'>
+      <div className='pb-28 accent-cursor'>
         <Suspense fallback={<Loading />}>
           <div className='py-20 px-8 grid grid-cols-5 gap-2'>
             <div className='border border-plume h-96 w-44 rounded-2xl'>
@@ -165,7 +165,7 @@ const Services = () => {
                 />
               </Scene>
             </div>
-            <div className='p-1 border border-plume h-96 w-44 rounded-2xl mt-20'>
+            <div className='border border-plume h-96 w-44 rounded-2xl mt-20 overflow-hidden'>
               <Scene>
                 <Designs
                   model='./3Ddesign/clothes.glb'
@@ -214,17 +214,17 @@ const Services = () => {
           </div>
         </Suspense>
         <div className='flex justify-center items-center w-full'>
-          <button className='bg-plume hover:bg-accent font-light mono px-6 py-4 text-black text-sm transition-all ease-in duration-300'>
+          <button className='bg-plume hover:bg-accent font-light mono px-6 py-4 text-black text-sm transition-all ease-in duration-300 cursor-none'>
             Book a Demo
           </button>
         </div>
       </div>
-      <div className='h-screen bg-white text-black flex justify-center items-center'>
+      <div className='h-screen bg-white text-black flex justify-center items-center overflow-x-hidden relative plume-cursor'>
         <div>
           <img
             src='./images/gitex.jpg'
             alt='Achievements'
-            className='aspect-auto max-h-96'
+            className='aspect-auto max-h-[28rem]'
           />
           <div className='w-full border-black py-2'>
             <div className='w-1/2 text-center'>
@@ -235,7 +235,14 @@ const Services = () => {
             </div>
           </div>
         </div>
-        <div className='absolute backdrop-blur-lg -left-80 mt-44'>
+        <div className='absolute backdrop-blur-lg -left-80 mt-10'>
+          <img
+            src='./images/gitex.jpg'
+            alt='Achievements'
+            className='aspect-auto max-h-60 blur-sm rounded-lg'
+          />
+        </div>
+        <div className='absolute backdrop-blur-lg -right-96 -mt-36'>
           <img
             src='./images/gitex.jpg'
             alt='Achievements'
@@ -243,7 +250,7 @@ const Services = () => {
           />
         </div>
       </div>
-      <div className='px-20 flex justify-between h-screen bg-white text-black'>
+      <div className='px-20 flex justify-between h-screen bg-white text-black plume-cursor'>
         <div className='h-full text-left'>
           <p className='uppercase text-md text-plume mono'>Latest News</p>
           <div className='text-5xl py-4 '>

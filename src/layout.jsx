@@ -10,42 +10,42 @@ const Layout = ({ children }) => {
   const [hover, setHover] = useState(false);
 
   useEffect(() => {
-    const onLoad = () => {
-      const hrElement = document.querySelector('hr');
-      hrElement.classList.add('line');
-    };
+    // const onLoad = () => {
+    //   const hrElement = document.querySelector('hr');
+    //   hrElement.classList.add('line');
+    // };
 
     if (location.pathname.includes('story')) {
       setHeader('hidden');
     }
-    onLoad();
+    // onLoad();
   }, [location]);
 
   return (
-    <main className='fade-in'>
-      <hr className='border-none fixed top-0 z-50' />
-      <header className={header}>
+    <main className='fade-in accent-cursor'>
+      {/* <hr className='border-none fixed top-0 z-50' /> */}
+      <header className={`${header}`}>
         <img
           src='./svgs/title.svg'
           alt='title'
           className='px-20 pt-6'
         />
       </header>
-      <nav className='sticky top-1 uppercase my-4 px-6 py-3 bg-main z-20'>
+      <nav className='sticky top-0 uppercase my-4 px-6 py-3 bg-main z-20'>
         <ul className='flex justify-around transition-all ease-in duration-300'>
-          <li className='cursor-pointer font-medium hover:underline underline-offset-2 hover:text-accent'>
+          <li className='font-medium hover:underline underline-offset-2 hover:text-accent'>
             <a href='/wesite-remastered/story'>Story</a>
           </li>
-          <li className='cursor-pointer font-medium hover:underline underline-offset-2 hover:text-accent'>
+          <li className='font-medium hover:underline underline-offset-2 hover:text-accent'>
             <a href='/wesite-remastered/ar-kiosk'>AR&nbsp;Kiosk</a>
           </li>
-          <li className='cursor-pointer font-medium hover:underline underline-offset-2 hover:text-accent'>
+          <li className='font-medium hover:underline underline-offset-2 hover:text-accent'>
             <a href='/contact'>Products</a>
           </li>
-          <li className='cursor-pointer font-medium hover:underline underline-offset-2 hover:text-accent'>
+          <li className='font-medium hover:underline underline-offset-2 hover:text-accent'>
             <a href='/home'>Achievements</a>
           </li>
-          <li className='flex gap-x-1 cursor-pointer font-medium hover:underline underline-offset-2 hover:text-accent'>
+          <li className='flex gap-x-1 font-medium hover:underline underline-offset-2 hover:text-accent'>
             <a
               href='#connect'
               className='flex gap-x-1'
@@ -76,12 +76,12 @@ const Layout = ({ children }) => {
         >
           <input
             type='text'
-            className='bg-transparent border-2 border-plume w-3/5 h-8 px-2.5 py-5 font-normal placeholder:text-plume text-white focus:outline-none cursor-pointer cursor-accent'
+            className='bg-transparent border-2 border-plume w-3/5 h-8 px-2.5 py-5 font-normal placeholder:text-plume text-accent focus:outline-none cursor-accent'
             placeholder='Name*'
           />
           <input
             type='email'
-            className='bg-transparent border-2 border-plume w-3/5 h-8 px-2.5 py-5 font-normal placeholder:text-plume text-white focus:outline-none'
+            className='bg-transparent border-2 border-plume w-3/5 h-8 px-2.5 py-5 font-normal placeholder:text-plume text-accent focus:outline-none'
             placeholder='Email*'
           />
           <select
@@ -125,18 +125,18 @@ const Layout = ({ children }) => {
           </select>
           <input
             type='text'
-            className='bg-transparent border-2 border-plume w-3/5 h-8 px-2.5 py-5 font-normal placeholder:text-plume text-white focus:outline-none'
+            className='bg-transparent border-2 border-plume w-3/5 h-8 px-2.5 py-5 font-normal placeholder:text-plume text-accent focus:outline-none'
             placeholder='Company'
           />
           <textarea
-            className='bg-transparent border-2 border-plume w-3/5 h-24 px-2.5 pt-2 font-normal placeholder:text-plume text-white focus:outline-none'
+            className='bg-transparent border-2 border-plume w-3/5 h-24 px-2.5 pt-2 font-normal placeholder:text-plume text-accent focus:outline-none'
             placeholder='Tell us more why you want to get in touch'
           />
           <div className='flex pt-4 w-3/5 justify-end'>
             <div
               onMouseEnter={() => setSubmitArrow('./svgs/line-arrow.svg')}
               onMouseLeave={() => setSubmitArrow('./svgs/accent-return.svg')}
-              className='flex gap-x-4 items-center justify-center border-2 border-accent text-accent hover:text-main hover:bg-accent hover:font-medium px-6 py-2 transition-all ease-in duration-300'
+              className='flex gap-x-4 items-center justify-center border-2 border-accent text-accent hover:text-main hover:bg-accent hover:font-medium px-6 py-2 transition-all ease-in duration-300 cursor-none'
             >
               <input
                 type='submit'

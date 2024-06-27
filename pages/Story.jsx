@@ -4,8 +4,8 @@ const Story = () => {
   return (
     <Layout>
       <div className='bg-white text-black px-10 py-20'>
-        <div className='px-20 flex justify-between items-baseline'>
-          <h1 className='text-5xl'>Our Story</h1>
+        <div className='px-20 flex justify-between'>
+          <h1 className='text-5xl'>Our Team</h1>
           <p className='max-w-96 text-left'>
             We bring a diverse range of skills and expertise <br />
             to the table, and we are committed to support our <br />
@@ -14,11 +14,11 @@ const Story = () => {
             stage growth.
           </p>
         </div>
-        <div className='grid grid-cols-3 gap-y-20 gap-x-10 place-items-center py-20'>
+        <div className='grid grid-cols-3 gap-20 place-items-center py-20'>
           {members.map((member, i) => (
             <div
               key={i}
-              className='h-[532px] w-[350px] bg-gray-300'
+              className='h-[20rem] w-[20rem] bg-gray-300'
             >
               <div className='bg-gray-300 h-full'>
                 <img
