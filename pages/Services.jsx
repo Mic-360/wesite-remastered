@@ -1,7 +1,7 @@
 import { Suspense, useRef, useState } from 'react';
+import { Designs, Logo } from '../components/sceneAssets';
 import Loading from '../src/loading';
 import Scene, { Selector } from '../src/scene';
-import { Designs, Logo } from '../components/sceneAssets';
 
 const Services = () => {
   const [player, setPlayer] = useState('./svgs/play.svg');
@@ -36,7 +36,7 @@ const Services = () => {
           onClick={() =>
             window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })
           }
-          src='./svgs/line-arrow.svg'
+          src='/svgs/line-arrow.svg'
           alt='scroll arrow'
           className='mb-20 rotate-90 animate-pulse'
         />
@@ -90,7 +90,7 @@ const Services = () => {
             preload='auto'
           >
             <source
-              src='./videos/titleVideo.mp4'
+              src='/videos/titleVideo.mp4'
               type='video/mp4'
             />
           </video>
@@ -103,7 +103,7 @@ const Services = () => {
       </div>
       <div className='bg-white text-black flex pr-96 py-20 gap-x-16 plume-cursor'>
         <img
-          src='./images/template.jpg'
+          src='/images/template.jpg'
           alt='banner'
         />
         <div className='pt-10 flex flex-col justify-between'>
@@ -130,7 +130,7 @@ const Services = () => {
               className='transform hover:scale-60'
             />
             <img
-              src='./svgs/see-more.svg'
+              src='/svgs/see-more.svg'
               alt='see more'
             />
           </div>
@@ -222,7 +222,7 @@ const Services = () => {
       <div className='h-screen bg-white text-black flex justify-center items-center overflow-x-hidden relative plume-cursor'>
         <div>
           <img
-            src='./images/gitex.jpg'
+            src='/images/gitex.jpg'
             alt='Achievements'
             className='aspect-auto max-h-[28rem]'
           />
@@ -237,14 +237,14 @@ const Services = () => {
         </div>
         <div className='absolute backdrop-blur-lg -left-80 mt-10'>
           <img
-            src='./images/gitex.jpg'
+            src='/images/gitex.jpg'
             alt='Achievements'
             className='aspect-auto max-h-60 blur-sm rounded-lg'
           />
         </div>
         <div className='absolute backdrop-blur-lg -right-96 -mt-36'>
           <img
-            src='./images/gitex.jpg'
+            src='/images/gitex.jpg'
             alt='Achievements'
             className='aspect-auto max-h-72 blur-sm rounded-lg'
           />
@@ -263,17 +263,17 @@ const Services = () => {
         </div>
         <div className='h-full pb-4 flex flex-col gap-y-8 overflow-y-scroll news-article'>
           <img
-            src='./images/news-a.jpg'
+            src='/images/news-a.jpg'
             alt='news-article'
             className='h-54'
           />
           <img
-            src='./images/news-b.jpg'
+            src='/images/news-b.jpg'
             alt='news-article'
             className='h-54'
           />
           <img
-            src='./images/news-c.jpg'
+            src='/images/news-c.jpg'
             alt='news-article'
             className='h-54'
           />

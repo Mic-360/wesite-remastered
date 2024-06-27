@@ -8,15 +8,15 @@ import Kiosk from '../pages/Kiosk.jsx';
 
 const router = createBrowserRouter([
   {
-    path: '/wesite-remastered/',
+    path: '/',
     element: <App />,
   },
   {
-    path: '/wesite-remastered/story',
+    path: '/story',
     element: <Story />,
   },
   {
-    path: '/wesite-remastered/ar-kiosk',
+    path: '/ar-kiosk',
     element: <Kiosk />,
   },
 ]);

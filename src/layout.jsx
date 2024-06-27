@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import './App.css';
 import { useLocation } from 'react-router-dom';
+import './App.css';
 
 const Layout = ({ children }) => {
   const [header, setHeader] = useState('');
@@ -26,7 +26,7 @@ const Layout = ({ children }) => {
       {/* <hr className='border-none fixed top-0 z-50' /> */}
       <header className={`${header}`}>
         <img
-          src='./svgs/title.svg'
+          src='/svgs/title.svg'
           alt='title'
           className='px-20 pt-6'
         />
@@ -34,10 +34,10 @@ const Layout = ({ children }) => {
       <nav className='sticky top-0 uppercase my-4 px-6 py-3 bg-main z-20'>
         <ul className='flex justify-around transition-all ease-in duration-300'>
           <li className='font-medium hover:underline underline-offset-2 hover:text-accent'>
-            <a href='/wesite-remastered/story'>Story</a>
+            <a href='/story'>Story</a>
           </li>
           <li className='font-medium hover:underline underline-offset-2 hover:text-accent'>
-            <a href='/wesite-remastered/ar-kiosk'>AR&nbsp;Kiosk</a>
+            <a href='/ar-kiosk'>AR&nbsp;Kiosk</a>
           </li>
           <li className='font-medium hover:underline underline-offset-2 hover:text-accent'>
             <a href='/contact'>Products</a>
@@ -54,7 +54,7 @@ const Layout = ({ children }) => {
             >
               Get&nbsp;in&nbsp;touch
               <img
-                src='./svgs/vector_arrow.svg'
+                src='/svgs/vector_arrow.svg'
                 alt='arrow'
                 className={`${
                   hover ? 'rotate-45' : ''
