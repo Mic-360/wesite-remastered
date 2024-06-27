@@ -72,3 +72,11 @@ a:hover {
 .mono {
   font-family: Adelle-Mono, monospace;
 }
+
+.plume-cursor {
+  cursor: url('/svgs/circle-plume.svg'), auto;
+}
+
+.accent-cursor {
+  cursor: url('/svgs/circle-accent.svg'), auto;
+}
