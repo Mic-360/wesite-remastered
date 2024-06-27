@@ -14,11 +14,11 @@ const Story = () => {
             stage growth.
           </p>
         </div>
-        <div className='grid grid-cols-3 gap-20 place-items-center py-20'>
+        <div className='grid grid-cols-3 gap-20 place-items-center py-20 px-16'>
           {members.map((member, i) => (
             <div
               key={i}
-              className='h-[20rem] w-[20rem] bg-gray-300'
+              className='h-80 w-72 bg-gray-300'
             >
               <div className='bg-gray-300 h-full'>
                 <img
