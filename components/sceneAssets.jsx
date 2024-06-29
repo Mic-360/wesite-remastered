@@ -1,8 +1,7 @@
 import { useAnimations, useGLTF } from '@react-three/drei';
 import { extend, useFrame } from '@react-three/fiber';
 import { useEffect, useRef } from 'react';
-import { AnimationMixer, LineBasicMaterial } from 'three';
-import Scene from '../src/scene';
+import { LineBasicMaterial } from 'three';
 import { SkeletonUtils } from 'three/examples/jsm/Addons.js';
 
 extend({ SkeletonUtils });
@@ -13,9 +12,9 @@ export function Logo(props) {
 
   useFrame((state) => {
     const t = state.clock.getElapsedTime();
-    ref.current.rotation.z = Math.sin(t / 2) / 4;
-    ref.current.position.y = (0.5 + Math.cos(t / 2)) / 7;
-    ref.current.rotation.x = Math.PI / 8;
+    ref.current.position.x = (0.5 + Math.cos((t * 8) / 3)) / 7;
+    ref.current.position.y = (0.5 + Math.cos((t * 4) / 3)) / 7;
+    ref.current.rotation.x = Math.PI / 36;
     ref.current.rotation.y = Math.PI / 3;
   });
 
