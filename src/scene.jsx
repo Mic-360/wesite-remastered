@@ -8,7 +8,7 @@ import { easing } from 'maath';
 import { useStore } from '../lib/utils';
 
 export default function Scene({ children }) {
-  
+
   return (
     <Canvas
       eventSource={document.getElementById('root')}
@@ -29,11 +29,11 @@ export default function Scene({ children }) {
       <hemisphereLight intensity={0.7} />
       <ContactShadows
         resolution={512}
-        position={[0, -0.8, 0]}
+        position={[0, -1.7, 0]}
         opacity={1}
         scale={10}
         blur={2}
-        far={0.8}
+        far={1.9}
       />
       {children}
     </Canvas>
