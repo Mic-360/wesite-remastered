@@ -8,17 +8,12 @@ function App() {
   const [showLayout, setShowLayout] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setShowLayout(true);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
+    const timeout = setTimeout(() => {
+      setShowLayout(true);
+    }, 1000);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.scrollTo(0, 0);
+      clearTimeout(timeout);
     };
   }, []);
 

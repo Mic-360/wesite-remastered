@@ -2,8 +2,8 @@ import { useEffect } from 'react';
 
 const Loading = () => {
   useEffect(() => {
-    const hrElement = document.querySelector('hr');
-    hrElement.classList.add('line');
+    // const hrElement = document.querySelector('hr');
+    // hrElement.classList.add('line');
 
     document.addEventListener(
       'wheel',
@@ -13,19 +13,19 @@ const Loading = () => {
           document.removeEventListener('wheel', disableScroll, {
             passive: false,
           });
-        }, 500);
+        }, 1000);
       },
       { passive: false }
     );
-
-    return () => {
-      hrElement.classList.remove('line');
-    };
+    
+    // return () => {
+    //   hrElement.classList.remove('line');
+    // };
   }, []);
 
   return (
     <div className='flex flex-col mt-1 justify-center items-center h-screen'>
-      <hr className='border-none fixed top-0 z-10' />
+      {/* <hr className='border-none fixed top-0 z-10' /> */}
       <svg
         width='40%'
         height='40%'
@@ -53,9 +53,6 @@ const Loading = () => {
           </clipPath>
         </defs>
       </svg>
-      <p className='text-accent relative -bottom-40 font-normal tracking-wide'>
-        SCROLL
-      </p>
     </div>
   );
 };
