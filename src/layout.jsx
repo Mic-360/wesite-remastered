@@ -153,7 +153,9 @@ const Layout = ({ children }) => {
       <footer className='px-20 py-2 flex flex-col justify-center items-center'>
         <div className='flex justify-between w-full items-baseline'>
           <h1 className='text-5xl'>Connect with us!</h1>
-          <ul className='uppercase flex gap-x-3'>
+          <ul
+            className='uppercase flex gap-x-10 mono tracking-wider'
+          >
             <li className='hover:underline underline-offset-2 text-accent'>
               <a
                 target='_blank'

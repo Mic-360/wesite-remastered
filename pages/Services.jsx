@@ -42,11 +42,11 @@ const Services = () => {
         />
       </div>
       <div className='bg-white text-black flex justify-around items-center p-10 py-20 plume-cursor'>
-        <div className='flex flex-col justify-between gap-y-44'>
+        <div className='flex flex-col justify-between gap-y-60'>
           <div className='flex text-3xl items-baseline gap-1'>
             <svg
-              width='24'
-              height='24'
+              width='30'
+              height='30'
               viewBox='0 0 42 41'
               fill='none'
               xmlns='http://www.w3.org/2000/svg'
@@ -56,14 +56,14 @@ const Services = () => {
                 fill='#998AE9'
               />
             </svg>
-            <p className='text-left text-4xl'>
+            <p className='text-left text-5xl leading-[1.1]'>
               <span className='bg-accent px-1'> We&apos;re shaping a new</span>
               <br /> dimension with our
               <br /> cutting-edge 3-D AR
               <br /> Kiosk Technologies
             </p>
           </div>
-          <p className='text-left pl-7'>
+          <p className='text-left pl-7 text-lg'>
             Step into the future with our revolutionary 3-D <br /> Try-on Kiosk
             Technologies, designed to transform <br /> the experience landscape.
             dedicated to <br /> providing seamless interactions that empower
@@ -82,12 +82,13 @@ const Services = () => {
           />
           <p className='text-sm'>Click and Play</p>
         </div>
-        <div className='w-80 rounded-xl overflow-hidden'>
+        <div className='w-72 h-[39rem] rounded-2xl overflow-hidden'>
           <video
             ref={playerRef}
             onClick={handlePlayer}
             autoFocus
             preload='auto'
+            className='w-full h-full object-cover'
           >
             <source
               src='/videos/titleVideo.mp4'
@@ -112,11 +113,19 @@ const Services = () => {
               Our 3-D AR
               <br /> Try On Kiosk Collection
             </p>
-            <ul className='list-disc list-inside underline underline-offset-[5px] space-y-1 text-xl mono hover:accent-cursor'>
-              <li className='hover:text-plume'>Museum Kiosk</li>
-              <li className='hover:text-plume'>Sopping Mall</li>
-              <li className='hover:text-plume'>E-Commerce</li>
-              <li className='hover:text-plume'>Events & Games</li>
+            <ul className='list-disc list-inside space-y-1 text-xl mono hover:accent-cursor'>
+              <li className='hover:text-plume hover:underline underline-offset-[5px] decoration-plume'>
+                Museum Kiosk
+              </li>
+              <li className='hover:text-plume hover:underline underline-offset-[5px] decoration-plume'>
+                Sopping Mall
+              </li>
+              <li className='hover:text-plume hover:underline underline-offset-[5px] decoration-plume'>
+                E-Commerce
+              </li>
+              <li className='hover:text-plume hover:underline underline-offset-[5px] decoration-plume'>
+                Events & Games
+              </li>
             </ul>
           </div>
           <div
