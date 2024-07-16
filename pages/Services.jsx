@@ -23,7 +23,7 @@ const Services = () => {
   return (
     <>
       <Suspense fallback={<Loading />}>
-        <div className='h-96 w-full'>
+        <div className='h-screen w-full'>
           <Scene>
             <Selector>
               <Logo rotation={[0.3, Math.PI / 1.6, 0]} />
@@ -56,7 +56,7 @@ const Services = () => {
                 fill='#998AE9'
               />
             </svg>
-            <p className='text-left text-5xl leading-[1.1]'>
+            <p className='text-left text-6xl leading-[1.1]'>
               <span className='bg-accent px-1'> We&apos;re shaping a new</span>
               <br /> dimension with our
               <br /> cutting-edge 3-D AR
@@ -78,11 +78,11 @@ const Services = () => {
             onClick={handlePlayer}
             src={player}
             alt='player control'
-            className='transition-opacity ease-in-out duration-300 hover:opacity-70'
+            className='transition-opacity ease-in-out duration-300 hover:opacity-70 h-10 m-4'
           />
-          <p className='text-sm'>Click and Play</p>
+          <p className='text-md'>Click and Play</p>
         </div>
-        <div className='w-72 h-[39rem] rounded-2xl overflow-hidden'>
+        <div className='w-72 h-[40rem] rounded-2xl overflow-hidden'>
           <video
             ref={playerRef}
             onClick={handlePlayer}
@@ -97,8 +97,8 @@ const Services = () => {
           </video>
         </div>
       </div>
-      <div className='bg-white pb-8 -mt-12 flex w-full justify-center items-center plume-cursor'>
-        <button className='bg-plume hover:bg-accent font-light mono px-6 py-4 text-black text-sm transition-all ease-in duration-300 cursor-none'>
+      <div className='bg-white pb-8 flex w-full justify-center items-center plume-cursor'>
+        <button className='bg-plume hover:bg-accent font-light mono px-8 py-5 text-black text-sm transition-all ease-in duration-300 cursor-none'>
           Tap to Play
         </button>
       </div>
@@ -146,8 +146,8 @@ const Services = () => {
         </div>
       </div>
       <div className='pt-36 text-left px-20 accent-cursor'>
-        <p className='uppercase text-xs text-accent mono'>What we do</p>
-        <div className='text-5xl py-10 '>
+        <p className='uppercase text-md text-accent mono'>What we do</p>
+        <div className='text-6xl py-10 '>
           <p className='leading-snug'>
             We offer an immersive, wide-ranging
             <br /> virtual try-on shopping experience
@@ -223,7 +223,7 @@ const Services = () => {
           </div>
         </Suspense>
         <div className='flex justify-center items-center w-full'>
-          <button className='bg-plume hover:bg-accent font-light mono px-6 py-4 text-black text-sm transition-all ease-in duration-300 cursor-none'>
+          <button className='bg-plume hover:bg-accent font-light mono px-8 py-5 text-black text-sm transition-all ease-in duration-300 cursor-none'>
             Book a Demo
           </button>
         </div>
@@ -233,7 +233,7 @@ const Services = () => {
           <img
             src='/images/gitex.jpg'
             alt='Achievements'
-            className='aspect-auto max-h-[28rem]'
+            className='aspect-auto max-h-[31rem]'
           />
           <div className='w-full border-black py-2'>
             <div className='w-1/2 text-center'>

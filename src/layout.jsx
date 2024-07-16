@@ -67,7 +67,7 @@ const Layout = ({ children }) => {
       {children}
       <div
         id='connect'
-        className='flex flex-col justify-center items-start px-20 py-20'
+        className='flex flex-col justify-center items-start px-20 py-20 h-screen'
       >
         <p className='text-5xl'>Work with us!</p>
         <form
@@ -76,17 +76,17 @@ const Layout = ({ children }) => {
         >
           <input
             type='text'
-            className='bg-transparent border-2 border-plume w-3/5 h-8 px-2.5 py-5 font-normal placeholder:text-plume text-accent focus:outline-none cursor-accent'
+            className='bg-transparent border-2 border-plume w-3/5 h-14 px-2.5 py-5 font-normal placeholder:text-plume text-accent focus:outline-none cursor-accent'
             placeholder='Name*'
           />
           <input
             type='email'
-            className='bg-transparent border-2 border-plume w-3/5 h-8 px-2.5 py-5 font-normal placeholder:text-plume text-accent focus:outline-none'
+            className='bg-transparent border-2 border-plume w-3/5 h-14 px-2.5 py-5 font-normal placeholder:text-plume text-accent focus:outline-none'
             placeholder='Email*'
           />
           <select
             name='interest'
-            className='focus:outline-none w-3/5 bg-transparent border-2 border-plume py-3 px-2 text-plume appearance-auto rounded-none'
+            className='focus:outline-none w-3/5 bg-transparent border-2 border-plume py-3 px-2 h-14 text-plume appearance-auto rounded-none'
             value={selectedInterest}
             onChange={(e) => {
               setSelectedInterest(e.target.value);
@@ -125,11 +125,11 @@ const Layout = ({ children }) => {
           </select>
           <input
             type='text'
-            className='bg-transparent border-2 border-plume w-3/5 h-8 px-2.5 py-5 font-normal placeholder:text-plume text-accent focus:outline-none'
+            className='bg-transparent border-2 border-plume w-3/5 h-14 px-2.5 py-5 font-normal placeholder:text-plume text-accent focus:outline-none'
             placeholder='Company'
           />
           <textarea
-            className='bg-transparent border-2 border-plume w-3/5 h-24 px-2.5 pt-2 font-normal placeholder:text-plume text-accent focus:outline-none'
+            className='bg-transparent border-2 border-plume w-3/5 h-44 px-2.5 pt-2 font-normal placeholder:text-plume text-accent focus:outline-none'
             placeholder='Tell us more why you want to get in touch'
           />
           <div className='flex pt-4 w-3/5 justify-end'>
@@ -152,7 +152,7 @@ const Layout = ({ children }) => {
       </div>
       <footer className='px-20 py-2 flex flex-col justify-center items-center'>
         <div className='flex justify-between w-full items-baseline'>
-          <h1 className='text-5xl'>Connect with us!</h1>
+          <h1 className='text-6xl'>Connect with us!</h1>
           <ul
             className='uppercase flex gap-x-10 mono tracking-wider'
           >
